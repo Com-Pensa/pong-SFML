@@ -1,2 +1,2 @@
-# Ignoring compiled outputs:
-*.o
+*.o        # Cpp compiled archives
+pong-SFML  # Project Compiled
