@@ -1,18 +1,33 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 
-#include <SFML/Graphics.hpp>
+//  Game objects
+#include "obj/Player.hpp"
 
 class Game
 {   
 private:
-    sf::RenderWindow *mainWindow;
-    sf::Event         mainWindowEvent;
+    //  Game Data and variables
+    sf::RenderWindow   *mainWindow;
+    sf::Event           mainWindowEvent;
+    sf::Clock           mainClock;
+    sf::Time            movimentTime;
+    sf::RectangleShape  middleLine;
+    Player             *rightPlayer,
+                       *leftPlayer;
+    
+    //  Initializers
+    void               init_window(),
+                       init_middle_line(),
+                       init_players();
     
 public:
-    Game();
-    
-    void run();
+    //  Game Functions:
+                        Game();
+    void                run(),
+                        process_events(),
+                        process_live_events(),
+                        show();
 };
 
 #endif
