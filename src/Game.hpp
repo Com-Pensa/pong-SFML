@@ -3,6 +3,7 @@
 
 //  Game objects
 #include "obj/Player.hpp"
+#include "obj/Ball.hpp"
 
 class Game
 {   
@@ -15,11 +16,13 @@ private:
     sf::RectangleShape  middleLine;
     Player             *rightPlayer,
                        *leftPlayer;
+    Ball               *mainBall;
     
     //  Initializers
     void               init_window(),
                        init_middle_line(),
-                       init_players();
+                       init_players(),
+                       init_ball();
     
 public:
     //  Game Functions:
