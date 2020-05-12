@@ -34,6 +34,11 @@ void Game::init_players()
     this-> leftPlayer-> set_down_key(sf::Keyboard::S);
 }
 
+void Game::init_ball()
+{   
+    this-> mainBall = new Ball();
+}
+
 //  Builder function
 Game::Game()
 {   
@@ -41,6 +46,7 @@ Game::Game()
     init_middle_line();
 
     init_players();
+    init_ball();
 }
 
 //  Game functions
@@ -74,6 +80,7 @@ void Game::process_live_events()
     
     this-> rightPlayer-> move(movimentTime);
     this-> leftPlayer -> move(movimentTime);
+    this-> mainBall   -> move(movimentTime);
     
     mainClock.restart().asMilliseconds();
 }
@@ -86,6 +93,7 @@ void Game::show()
     this-> mainWindow-> draw(this-> middleLine);
     this-> mainWindow-> draw(this-> rightPlayer-> get_paddle());
     this-> mainWindow-> draw(this-> leftPlayer -> get_paddle());
+    this-> mainWindow-> draw(this-> mainBall-> get_ball());
     
     this-> mainWindow-> display();
 }
