@@ -24,7 +24,7 @@ void Player::set_down_key(sf::Keyboard::Key down_key)
 
 void Player::move(sf::Time timeReference)
 {   
-    short moviment = 0.278 * timeReference.asMilliseconds();
+    short moviment = 0.300 * timeReference.asMilliseconds();
     
     //  Listen to Keyboard
     if (sf::Keyboard::isKeyPressed(upKey))    positionY-=moviment;

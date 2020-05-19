@@ -26,10 +26,31 @@ void Ball::move(sf::Time timeReference)
     if (goingDown) positionY += moviment;
     else           positionY -= moviment;
     
+    if (goingRight) positionX += moviment;
+    else            positionX -= moviment;
+
+    //  Moving the Ball
     ballCircle.setPosition(sf::Vector2f(positionX, positionY));
+}
+
+void Ball::make_colision(sf::RectangleShape playerPaddle)
+{   
+    if (ballCircle.getGlobalBounds().intersects(playerPaddle.getGlobalBounds()))
+    {   
+        if (positionX<597)    goingRight=true;
+        else                  goingRight=false;
+    }
 }
 
 sf::CircleShape Ball::get_ball()
 {   
     return ballCircle;
+}
+
+void Ball::bring_to_center()
+{   
+    if (positionX <= -80 || positionX >= 1300)
+    {   
+        to_center();
+    }
 }

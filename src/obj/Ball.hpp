@@ -16,6 +16,8 @@ public:
     Ball();
     
     void  to_center(),
+          bring_to_center(),
+          make_colision(sf::RectangleShape playerPaddle),
           move(sf::Time timeReference);
     
     sf::CircleShape get_ball();

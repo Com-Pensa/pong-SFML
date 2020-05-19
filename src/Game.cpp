@@ -80,8 +80,13 @@ void Game::process_live_events()
     
     this-> rightPlayer-> move(movimentTime);
     this-> leftPlayer -> move(movimentTime);
-    this-> mainBall   -> move(movimentTime);
     
+    this-> mainBall-> make_colision(this-> rightPlayer-> get_paddle());
+    this-> mainBall-> make_colision(this-> leftPlayer -> get_paddle());
+    this-> mainBall-> bring_to_center();
+    
+    this-> mainBall   -> move(movimentTime);
+
     mainClock.restart().asMilliseconds();
 }
 
