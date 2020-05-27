@@ -28,7 +28,7 @@ $ git clone https://github.com/Com-Pensa/pong-SFML pongSFML
 $ cd pongSFML
 
 # Execute the Compiler Commands.sh
-$ ./'Compiler Commands.sh'
+$ .'/src/components/Compiler Commands.sh'
 ```
 ---
 Have fun! :blush:
