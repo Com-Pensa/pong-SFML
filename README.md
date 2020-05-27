@@ -1,11 +1,34 @@
-# pong-SFML
-A copy of Pong in SFML
+---
+# Pong SFML :black_circle:
+## A copy of pong in sfml
 
-What?
-This repository contains a copy of pong made in SFML.
+### What?
+This repository contains a copy of Pong made in SFML
 
-Why?
-s
-I decided to make this game in this API because SFML have a simple interface to game development, beside that i want to improve my programation in C++
+### Why?
+To train the game development  :video_game:  and have fun in the process...
 
-To compile this project using bash terminal on linux, you only need to give the change the permissions with chmod 711 execute the script in "Compiler Commands.sh".
+### Tecnologies:
+* [SFML](https://www.sfml-dev.org/)
+* [C++](https://www.cplusplus.com/)
+
+---
+## How to install and run?
+Install the dependencies first (on my Arch Linux:computer:, I use this command):
+```bash
+$ sudo pacman -S gcc sfml
+```
+
+Follow the instructions in your bash:
+```bash
+# Clone this repository:
+$ git clone https://github.com/Com-Pensa/pong-SFML pongSFML
+
+# Enter in the repository:
+$ cd pongSFML
+
+# Execute the Compiler Commands.sh
+$ ./'Compiler Commands.sh'
+```
+---
+Have fun! :blush:
