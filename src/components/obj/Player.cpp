@@ -2,14 +2,14 @@
 
 Player::Player()
 {   
-    paddle.setSize(sf::Vector2f(20, 100));
+    paddle.setSize(sf::Vector2f(paddleSize[0], paddleSize[1]));
     paddle.setFillColor(sf::Color::White);
 }
 
 // the single difference between the player X to Y:
 void Player::set_position_x(unsigned short int position_x)
 {   
-    positionX=position_x, positionY=287;
+    positionX=position_x, positionY=window[1]/2-paddleSize[1]/2;
     paddle.setPosition(sf::Vector2f(position_x, positionY));
 }
 
@@ -26,15 +26,15 @@ void Player::set_down_key(sf::Keyboard::Key down_key)
 void Player::move(sf::Time timeReference)
 {   
     // Converting the time to an integer:
-    short moviment = 0.300/* Speed */ * timeReference.asMilliseconds();
+    short moviment = playerVelocity * timeReference.asMilliseconds();
     
     //  Listen to keyboard:
     if (sf::Keyboard::isKeyPressed(upKey))    positionY-=moviment;
     if (sf::Keyboard::isKeyPressed(downKey))  positionY+=moviment;
     
     //  Validating moviments (don't leave the screen):
-    if (positionY<0)         positionY=0;
-    else if (positionY>575)  positionY=575;
+    if (positionY<0)                positionY=0;
+    else if (positionY>maxPaddleY)  positionY=maxPaddleY;
     
     paddle.setPosition(sf::Vector2f(positionX, positionY));
 }
