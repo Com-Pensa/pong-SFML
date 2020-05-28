@@ -1,7 +1,7 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 
-//  Game objects
+#include "obj/Constants.hpp"
 #include "obj/Player.hpp"
 #include "obj/Ball.hpp"
 
