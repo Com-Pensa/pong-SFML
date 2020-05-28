@@ -2,6 +2,7 @@
 #define BALL_HPP
 
 #include <SFML/Graphics.hpp>
+#include "Constants.hpp"
 
 class Ball
 {   
